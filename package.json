@@ -1,0 +1,22 @@
+{
+  "name": "toolbar-electron-danmu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jetlee-ljp/toolbar-electron-danmu.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jetlee-ljp/toolbar-electron-danmu/issues"
+  },
+  "homepage": "https://github.com/jetlee-ljp/toolbar-electron-danmu#readme",
+  "devDependencies": {
+    "electron": "^19.0.8"
+  }
+}

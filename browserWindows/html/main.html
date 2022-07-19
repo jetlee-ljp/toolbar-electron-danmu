@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹幕助手</title>
+    <link href="../lib/layui/css/layui.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-xs6" style="text-align: center ;">
+                <img src="../img/no1.jpg" style="width:200px; height: 200px;margin-top: 50px;" alt="">
+                <div>扫描小程序，进入互动弹幕，即可发送</div>
+            </div>
+            <div class="layui-col-xs6">
+                <div class="layui-form" style="margin-top: 80px">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">频道编号:</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="title" required lay-verify="required" placeholder="请输入频道号"
+                                autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">显示昵称:</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="switch" lay-skin="switch">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-filter="formDemo">弹幕开启</button>
+                        </div>
+                    </div>
+
+                    </form>
+                </div>
+            </div>
+
+
+
+
+            <script src="../lib/layui/layui.js"></script>
+</body>
+
+</html>
