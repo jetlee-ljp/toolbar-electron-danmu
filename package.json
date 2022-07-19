@@ -4,7 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron . --arch=arm64"
+    "start": "electron .",
+    "build": "electron-builder"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,8 @@
   },
   "homepage": "https://github.com/jetlee-ljp/toolbar-electron-danmu#readme",
   "devDependencies": {
-    "electron": "^19.0.0-beta.8"
+    "electron": "^19.0.0-beta.8",
+    "electron-builder": "^23.1.0"
   },
   "dependencies": {
     "mqtt": "^4.3.7"

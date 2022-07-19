@@ -20,7 +20,8 @@ const createWindow = () => {
     mainWindow = new BrowserWindow({
         width: 600,
         height: 350,
-        skipTaskbar: true,
+        icon:"ico.ico",
+        // skipTaskbar: true,
         maximizable: false,
         autoHideMenuBar: true,
         resizable: false,
