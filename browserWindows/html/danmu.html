@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <title>弹幕助手</title>
+    <style>
+        * {
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        span {
+            color: red;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body leftmargin=0 topmargin=0 οncοntextmenu='return false' οndragstart='return false' onselectstart='return false'
+    οnselect='document.selection.empty()' οncοpy='document.selection.empty()' onbeforecopy='return false'
+    οnmοuseup='document.selection.empty()'>
+    <span id="va"></span>
+
+    <script>
+        const counter = document.getElementById('va')
+
+        window.electronAPI.handleCounter((event, value) => {
+            console.log(value)
+            counter.innerText = value
+        })
+    </script>
+
+</body>
+
+</html>
