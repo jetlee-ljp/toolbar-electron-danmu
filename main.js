@@ -20,7 +20,7 @@ const createWindow = () => {
     mainWindow = new BrowserWindow({
         width: 600,
         height: 350,
-        icon:"ico.ico",
+        icon: "ico.ico",
         // skipTaskbar: true,
         maximizable: false,
         autoHideMenuBar: true,
@@ -31,8 +31,8 @@ const createWindow = () => {
     })
     ipcMain.on('startDanMuConfig', (event, data) => {
         if (data == 0) {
-            MqttClient.end()
-
+            MqttClient.end();
+            clearSubWindows();
         }
         else {
             var roomId = data.roomId;
@@ -78,11 +78,11 @@ let IntervalArr = [];
 let PositionArr = [];
 function addSubWindows(content) {
     let dateStr = Date.now();
-    let subWidth = content.length * 50;
-    let topPos = Math.floor(Math.random() * (ScrAllHeight-50))
+    let subWidth = content.length * 30;
+    let topPos = Math.floor(Math.random() * (ScrAllHeight - 40))
     subWindowsArr[dateStr] = new BrowserWindow({
         width: subWidth,
-        height: 50,
+        height: 40,
         frame: false,
         alwaysOnTop: true,
         transparent: true,
@@ -101,12 +101,30 @@ function addSubWindows(content) {
         if (PositionArr[dateStr] + subWidth < 0) {
             subWindowsArr[dateStr].close();
             clearInterval(IntervalArr[dateStr])
+            delete (subWindowsArr[dateStr]);
+            delete (IntervalArr[dateStr]);
+            delete (PositionArr[dateStr]);
         }
-    }, 10);
+    }, 5);
     subWindowsArr[dateStr].loadFile("./browserWindows/html/danmu.html")
     subWindowsArr[dateStr].webContents.send('setValue', content);
 }
 
+/**
+ *  清除所有弹幕程序
+ */
+function clearSubWindows() {
+
+    for (let arrItem in IntervalArr) {
+        clearInterval(IntervalArr[arrItem]);
+    }
+    for (let arrItem in subWindowsArr) {
+        subWindowsArr[arrItem].close();
+    }
+    IntervalArr = [];
+    subWindowsArr = [];
+    PositionArr = [];
+}
 
 
 function startMqtt(roomId, isNickName) {
